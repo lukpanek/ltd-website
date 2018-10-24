@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #151515;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.maintitle {
+    max-width: 1340px;
+    margin: 20px auto;
+    margin-top: 40px;
+    padding-left: 15px;
+}
+
+.maintitle p {
+    margin: 0;
+}
+
+.maintitle .title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.maintitle .description {
+    color: #606060;
+    font-size: 18px;
+}
+
+.boxes {
+    margin: 0 auto;
+    max-width: 1340px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.boxes .box {
+    width: 400px;
+    background: #202020;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
+    flex-grow: 1;
+    margin: 10px;
+}
+
+.boxes .box .image {
+    height: 200px;
+    background: #303030;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.15);
+}
+
+.boxes .box .content {
+    padding: 15px 20px;
+}
+
+.boxes p {
+    margin: 0;
+}
+
+.boxes .title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.boxes .description {
+    font-size: 12px;
+    color: #606060;
+    margin-top: 10px;
+}
+
+.boxes .button {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.boxes .button a {
+    font-size: 14px;
+    padding: 5px 10px;
+    background: linear-gradient(135deg, #fe3d3e 1%,#e81e1e 100%); 
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #fff;
+    text-decoration: none;
+}
+
+.boxes .button i {
+    margin-left: 5px;
+}

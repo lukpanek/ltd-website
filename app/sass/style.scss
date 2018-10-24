@@ -1,0 +1,79 @@
+$colors: (
+    light: #fe3d3e,
+    dark: #e81e1e,
+
+    gradient-right: linear-gradient(to right, #fe3d3e 0%, #e81e1e 100%),
+    gradient-diagonal: linear-gradient(135deg, #fe3d3e 0%, #e81e1e 100%),
+
+    bg-page: #151515,
+    bg-element: #202020,
+
+    font-main: #fff,
+    font-labels: #606060
+);
+
+$breaks: (
+    large: 1200px,
+    medium: 768px,
+    small: 600px
+);
+
+@import 'responsive';
+
+body {
+    margin: 0;
+    padding: 0;
+    background: map-get($colors, bg-page);
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    width: 100%;
+    height: 600px;
+    background: {
+        image: url('../images/header.jpg');
+        color: map-get($colors, bg-element);
+        repeat: no-repeat;
+        position-x: center;
+        position-y: center;
+        size: cover;
+    }
+    box-shadow: 0px 5px 50px 0px rgba(0, 0, 0, 0.25);
+    padding-top: 50px;
+
+    @include responsive(large) {
+        padding-top: 20px;
+    }
+
+    @include responsive(small) {
+        padding-top: 0;
+    }
+
+    @import 'navigation';
+
+    .content {
+        max-width: 1340px;
+        margin: {
+            top: 70px;
+            bottom: 50px;
+            left: auto;
+            right: auto;
+        }
+
+        p {
+            margin: 0;
+
+            &.sub {
+                margin-top: 20px;
+                font-size: 18px;
+            }
+
+            &.main {
+                font-weight: 900;
+                font-size: 125px;
+            }
+        }
+
+    }
+}

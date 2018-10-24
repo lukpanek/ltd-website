@@ -1,0 +1,3 @@
+@mixin responsive($size) {
+    @media (max-width: map-get($breaks, $size)) { @content; }
+}
