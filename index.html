@@ -15,7 +15,12 @@
     <meta property="og:description" content="Osobní stránka Lukáš Pánka - web designera, vývojáře, grafika a hráče. Všechny základní informace, projekty a kontakt. Vše, co potřebuješ vědět.">
     <meta property="og:image" content="https://liturkey.eu/public/images/logo_bg.jpg">
 
+    <link rel="stylesheet" href="./public/css/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./public/css/slick.css">
+    <link rel="stylesheet" href="./public/css/slick-theme.css">
     <link rel="stylesheet" href="./public/css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
         crossorigin="anonymous">
@@ -23,41 +28,298 @@
 
 <body>
     <header>
-        <nav>
+        <div class="mobile">
+            <div class="logo"></div>
+            <span class="menu" onclick="toggleMenu();"><i class="fas fa-bars"></i></span>
+        </div>
+        <nav id="navigation" class="hidden">
             <div class="left">
                 <div class="logo"></div>
                 <ul class="menu">
                     <li><a class="current" href="#">Domů</a></li>
-                    <li><a href="#">O mně</a></li>
-                    <li><a href="#">Projekty</a></li>
-                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#about">O mně</a></li>
+                    <li><a href="#projects">Projekty</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
                 </ul>
             </div>
 
             <div class="right">
-                <a href="#"><i class="fab fa-discord"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-spotify"></i></a>
+                <a href="https://discord.gg/qRg3xhY"><i class="fab fa-discord"></i></a>
+                <a href="https://twitter.com/Liturkey"><i class="fab fa-twitter"></i></a>
+                <a href="https://open.spotify.com/user/lukaspanek5"><i class="fab fa-spotify"></i></a>
             </div>
         </nav>
 
         <div class="content">
             <p class="sub">Vývojář / Webdesigner</p>
-            <p class="main">Lukáš<br>Pánek</p>
+            <h1 class="main">Lukáš<br>Pánek</h1>
         </div>
     </header>
 
     <main>
+        <div class="cookies">
+            <div>
+                <p>
+                    Mé stránky používají k analýze návštěvnosti (Google Analytics), personalizaci reklam a taky na tuto
+                    zprávu soubory cookies. S dalším používáním tohoto webu souhlasíte s jejich ukládáním. Ty opravdové
+                    cookies nedostanete,
+                    musím platit za hosting :(. <a href="./cookies.html">Více informací »</a>
+                </p>
+                <a class="button" onclick="cookiesAgreement(true);">Rozumím!</a>
+            </div>
+        </div>
+        <div class="sections">
+            <section id="about">
+                <div class="title">
+                    <h2 class="main">O mně</h2>
+                    <p class="sub">Kdo vůbec jsem?</p>
+                </div>
+                <div class="about">
+                    <div class="left">
+                        <p>
+                            Ahoj, jmenuji se Lukáš Pánek. Jsem student, co pochází z jedné vesnice poblíž Liberce a
+                            aktuálně studuje na SPŠSE a VOŠ Liberec, obor technické lyceum. Zajímám se o vše, co se
+                            týká webů, grafiky a programátorství. Weby jsem začal vytvářet ve svých 13 letech a nadále
+                            se sám rozvíjel. Po přijetí na střední školu se začaly mé znalosti ještě více rozšiřovat.
+                            Také o sobě často říkám, že jsem hráč &ndash; to už poslední dobou přestává být pravdou.
+                            Díky hraní Minecraftu jsem začal dělat věci, co se otáčely okolo našeho serveru &ndash;
+                            weby, psaní a hlavně programování. Dostal jsem se do Indiana i na CraftManii a nyní pracuji
+                            jako freelancer, ale hlavně se soustředím na svůj vlastní rozvoj.
+                        </p>
+                    </div>
+                    <div class="right">
+                        <div class="title">
+                            <h3 class="main">Dovednosti</h3>
+                            <p class="sub">Co že to všechno umím?</p>
+                        </div>
+                        <div class="bar">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="80"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="description">HTML5 <span class="percentage">90%</span></p>
+                        </div>
+                        <div class="bar">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="description">CSS3 <span class="percentage">80%</span></p>
+                        </div>
+                        <div class="bar">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="80"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="description">JS <span class="percentage">60%</span></p>
+                        </div>
+                        <div class="bar">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="80"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="description">PHP <span class="percentage">30%</span></p>
+                        </div>
+                        <div class="bar">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="80"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="description">Git <span class="percentage">40%</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="slide">
+                        <h3 class="title">První den života</h3>
+                        <p class="content">Den, kdy započal můj život. Nikdy nebyl nijak luxusní, ale jsem za něj rád.
+                            Dodnes stále můj nejdůležitější den v životě. Již od mala jsem se zajímal o technické věci,
+                            elektřinu a počítače. Což mě také nakonec vedlo k rozhodnutí vydat se na střední technickou
+                            školu. Stále toho nelituji.</p>
+                        <p class="date">13. 10. 2001</p>
+                    </div>
+                    <div class="slide">
+                        <h3 class="title">Tvorba herních serverů</h3>
+                        <p class="content">Ano, Minecraft. Hra, ale zároveň i práce. Díky vytváření serverů pro tuto
+                            hru jsem se naučil nejvíce věcí v nejkratším časovém období. Tvorba webů, pluginů a grafiky
+                            &ndash; to vše mě inspirovalo dodnes a bez Minecraftu bych možná ani nedělal to, co dělám
+                            teď.</p>
+                        <p class="date">2012 - 2017</p>
+                    </div>
+                    <div class="slide">
+                        <h3 class="title">CraftMania</h3>
+                        <p class="content">Období, ve kterém jsem na delší dobu působil na nějakém větším Minecraft
+                            serveru. CraftManie mi přinesla hodně zkušeností &ndash; komunikace s hráči, tvorba
+                            pluginů, vytváření webů, grafika a další. Mimo to jsem rozvíjel naší Wiki stránku s
+                            informacemi o serveru. Stále na CraftManii působím, ale pouze jako vývojář na vedlejší
+                            projekty.</p>
+                        <p class="date">15. 4. 2017 - Současnost</p>
+                    </div>
+                    <div class="slide">
+                        <h3 class="title">Práce v Indianu</h3>
+                        <p class="content">První pořádné zaměstnání. V Indianovi jsem psal různé články na web, ale
+                            mimo to jsem se učil i práci s videem, dabing a další užitečné věci. Toto byl jeden z mých
+                            největších snů, který se nakonec i splnil. Naučil jsem se práci s komunitou, komunikovat s
+                            vývojáři a psát delší texty (na recenze).</p>
+                        <p class="date">9. 6. 2017 - 1. 9. 2018</p>
+                    </div>
+                    <div class="slide">
+                        <h3 class="title">SPŠSE a VOŠ Liberec</h3>
+                        <p class="content">Konečně profesionální rozvoj vzdělání. Nástup na tuto školu nebyl
+                            nejjednodušší, ale stálo to za to. Studuji obor technické lyceum (něco jako technické
+                            gymnázium) a ve svém oboru se učím vše ohledně strojírenství, ale hlavně web developmentu,
+                            grafiky a fotografování. Studium na této škole ukončím v roce 2021.</p>
+                        <p class="date">4. 9. 2017 - Současnost</p>
+                    </div>
+                </div>
+            </section>
+            <section id="projects">
+                <div class="title">
+                    <h2 class="main">Projekty</h2>
+                    <p class="sub">Seznam všech aktuálních i starších projektů</p>
+                </div>
+                <div class="projects">
+                    <article>
+                        <div class="image" style="background-image: url('./public/images/projects/craftmania.png');"></div>
+                        <div class="content">
+                            <h3 class="title">CraftMania</h3>
+                            <p class="description">Jeden z největších Minecraft serverů v Česku. Jsem na pozici
+                                vývojáře a v historii jsem vytvářel pluginy pro tento server. Nyní spíše vytvářím
+                                grafiku a vedlejší weby. Tento projekt mi pomohl spojit všechny dovednosti dohromady a
+                                přidat k tomu nějaké nové (jako například práci s Gitem a Linuxem).</p>
+                            <p class="button"><a href="https://craftmania.cz">Více informací <i class="fas fa-angle-right"></i></a></p>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="image" style="background-image: url('./public/images/projects/indian.jpg');"></div>
+                        <div class="content">
+                            <h3 class="title">Indian</h3>
+                            <p class="description">Herní pořad o hrách pro každého &ndash; tak zní motto jednoho z
+                                největších herních pořadů a webů u nás. V období jednoho roku jsem se naučil psát
+                                kvalitní články, zjistil, jak funguje práce ve velkých projektech, naučil se pracovat s
+                                komunitou a také spolupracoval na pár vedlejších projektech. Splněný sen.</p>
+                            <p class="button"><a href="https://indian-tv.cz">Více informací <i class="fas fa-angle-right"></i></a></p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <section id="blog" class="full">
+                <h2 class="main">Můj blog</h2>
+                <p class="sub">Již brzy zde bude stát můj blog plný zajímavých článků.</p>
+            </section>
+            <section id="contact">
+                <div class="title">
+                    <h2 class="main">Kontakt</h2>
+                    <p class="sub">Máš zájem o webovou stránku? Dotaz? Jen do toho!</p>
+                </div>
+                <div class="contact">
+                    <div class="left">
+                        <article class="card">
+                            <div class="image" style="background: url('./public/images/web.svg') no-repeat center center; background-size: contain;">
 
+                            </div>
+                            <div class="content">
+                                <h3 class="title">Webové stránky</h3>
+                                <p class="description">Potřebuješ své vlastní webové stránky? Chceš je levně a
+                                    kvalitně? Jsem tu pro tebe! Pokud potřebuješ moderní a responzivní web, který bude
+                                    držet standarty HTML a CSS několik let dopředu a bude mít zaručenou funkčnost na
+                                    všech nových
+                                    zařízeních a prohlížečích, stačí mi napsat s popisem projektu a můžeme se domluvit.
+                                </p>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <div class="image" style="background: url('./public/images/graphics.svg') no-repeat center center; background-size: contain;">
+
+                            </div>
+                            <div class="content">
+                                <h3 class="title">Grafické návrhy</h3>
+                                <p class="description">Nepotřebuješ nakódovat stránku? Chceš grafický návrh jakékoliv
+                                    věci? Pokud máš na kódování webů jiné lidi, můžeš požádat pouze o grafický návrh.
+                                    Layouty na sociální sítě, webové návrhy, ikony a další. Vše dokážu. Pracuji v
+                                    nejnovější sadě Adobe programů jakými jsou například Adobe Photoshop, Adobe Xd a
+                                    Adobe Illustrator.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="right">
+                        <div class="title">
+                            <h3 class="main">Kontaktní formulář</h3>
+                            <p class="sub">Máš nějaký jiný dotaz? Zde máš možnost se zeptat!</p>
+                        </div>
+
+                        <div class="output">
+                            <p>Úspěch! Tvoje zpráva byla odeslána. Brzo se ti ozvu nazpátek.</p>
+                        </div>
+
+                        <div class="form">
+                            <input type="email" class="email" name="email" placeholder="Tvůj e-mail" required>
+                            <input type="text" class="subject" name="subject" placeholder="Předmět zprávy" required>
+                            <textarea name="message" class="message" placeholder="Text zprávy" required></textarea>
+
+                            <input class="submit" type="submit" value="Odeslat formulář">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>
-
+        <div class="footer">
+            <div class="content">
+                <div class="left">
+                    <ul>
+                        <li class="title">Spojení se mnou</li>
+                        <li><a href="https://discord.gg/qRg3xhY">Discord</a></li>
+                        <li><a href="https://twitter.com/TenLiturkey">Twitter</a></li>
+                        <li><a href="https://open.spotify.com/user/lukaspanek5">Spotify</a></li>
+                        <li><a href="https://instagram.com/liturkey">Instagram</a></li>
+                        <li><a href="https://facebook.com/Liturkey">Facebook</a></li>
+                        <li><a href="mailto:lukaspanek5@gmail.com">E-mail</a></li>
+                    </ul>
+                    <ul>
+                        <li class="title">Odkazy</li>
+                        <li><a href="#">Můj blog (v přípravě)</a></li>
+                        <li><a href="./cookies.html">Informace o cookies</a></li>
+                        <li><a href="./license.html">Licence</a></li>
+                        <li><a href="./credits.html">Pouzitý open-source</a></li>
+                        <li><a href="https://liturkey.eu/old">Starý web</a></li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <div class="logo"></div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="content">
+                <p class="info">Vytvořeno s 💖 a hromadou ☕ v Česku.<br>
+                    &copy; Lukáš Pánek 2018 - Všechna práva vyhrazena - <span class="version">v2.0.0p</span><br>
+                    Stránka vznikla s použitím <a href="./credits.html">několika úžasných projektů</a>. Děkuji &lt;3.
+                    <!-- Nikita a libraries -->
+                </p>
+                <div class="cc">
+                    <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><i class="fab fa-creative-commons"></i><i
+                            class="fab fa-creative-commons-by"></i><i class="fab fa-creative-commons-nc"></i><i class="fab fa-creative-commons-nd"></i></a>
+                </div>
+                <p class="links"><a href="./cookies.html"><i class="fas fa-cookie-bite"></i> Cookies</a><a href="#">Zpět nahoru <i
+                            class="fas fa-arrow-up"></i></a></p>
+            </div>
+        </div>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="./assets/js/tilt.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="./public/js/tilt.js"></script>
+    <script src="./public/js/smooth-scroll.js"></script>
+    <script src="./public/js/slick.js"></script>
+    <script src="./public/js/main.js?ver=5498486e-2d8e-4acd-aca6-5409f842f0ef"></script>
 </body>
 
 </html>

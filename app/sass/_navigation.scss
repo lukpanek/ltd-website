@@ -4,6 +4,7 @@ nav {
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
 
     .left {
         display: flex;
@@ -90,9 +91,7 @@ nav {
     }
     
     @include responsive(medium) {
-        & {
-            justify-content: center;
-        }
+        justify-content: center;
 
         .right {
             display: none;
@@ -100,31 +99,81 @@ nav {
     }
 
     @include responsive(small) {
-        & {
-            justify-content: flex-start;
+        justify-content: flex-start;
+        padding: 0;
+        background: #202020;
+        position: absolute;
+        transition-duration: 100ms;
+        width: 100%;
+        padding-top: 70px;
+
+        &.hidden {
+            top: -315px;
         }
 
-        ul.menu {
-            flex-direction: column;
-
-            li {
-                margin: 0 !important;
-
-                a {
-                    padding: 0 !important;
-
-                    &.current:after {
-                        display: none;
-                    }
-                }
-            }
+        &.shown {
+            top: 0px;
         }
 
         .left {
+            width: 100%;
 
             .logo {
                 display: none;
             }
+
+            ul.menu {
+                flex-direction: column;
+                background: #202020;
+                width: 100%;
+    
+                li {
+                    margin: 0 !important;
+                    text-align: center;
+    
+                    a {
+                        padding: 10px 15px !important;
+                        width: 100%;
+                        display: block;
+    
+                        &.current:after {
+                            display: none;
+                        }
+                    }
+                }
+            }
         }
+    }
+}
+
+.mobile {
+    padding: 10px;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    display: none;
+
+    div {
+        width: 50px;
+        height: 50px;
+        background: {
+            image: url('../images/logo.png');
+            position-x: center;
+            position-y: center;
+            size: 110%;
+        }
+    }
+
+    .menu {
+        position: absolute;
+        left: 0;
+        padding: 7px 20px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    @include responsive(small) {
+        display: flex;
     }
 }
